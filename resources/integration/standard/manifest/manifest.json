@@ -1,0 +1,74 @@
+{
+    "name": "Lingu",
+    "short_name": "Lingu",
+    "icons":
+    [
+        {
+            "src": "icon-any.svg",
+            "type": "image/svg+xml",
+            "sizes": "1024x1024",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-any.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-any-small.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-any-smaller.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-any-smallest.png",
+            "type": "image/png",
+            "sizes": "96x96",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-maskable.svg",
+            "type": "image/svg+xml",
+            "sizes": "1024x1024",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-maskable.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-maskable-small.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-maskable-smaller.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-maskable-smallest.png",
+            "type": "image/png",
+            "sizes": "96x96",
+            "purpose": "maskable"
+        }
+    ],
+    "scope": "/",
+    "start_url": "../../../../dashboard?utm_source=installed",
+    "display": "standalone",
+    "prefer_related_applications": false,
+    "related_applications":
+    [
+    ]
+}

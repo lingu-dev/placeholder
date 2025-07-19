@@ -1,0 +1,46 @@
+ <!DOCTYPE html> <html lang="en-US"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover"> <meta name="robots" content="index,follow"> <meta name="fragment" content="!"> <meta name="prerender-status-code" content="504"> <title>Lingu.dev</title> <meta name="description" content="Lingu is a modern translation management system, that leverages state of the art AI, for an automated, continuous localization process, producing verifiably correct translations, quickly and at at low cost"> <script> const preferredColorScheme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; document.cookie = `prefers-color-scheme=${preferredColorScheme};path=/;` </script> <link rel="icon" href="/resources/integration/standard/favicon/favicon-gray.png" type="image/png"> <link rel="icon" href="/resources/integration/standard/favicon/favicon.svg" type="image/svg"> <link rel="manifest" href="/resources/integration/standard/manifest/manifest.json" crossorigin="use-credentials"> <meta name="application-name" content="Lingu"> <link rel="mask-icon" href="/resources/integration/apple/mask-icon.svg" color="#878787"> <link rel="apple-touch-icon" href="/resources/integration/apple/icon.png"> <meta name="apple-mobile-web-app-title" content="Lingu"> <meta name="google" content="notranslate"> <meta property="og:type" content="website"> <meta property="og:title" content="Lingu.dev"> <meta property="og:description" content="Lingu is a modern translation management system, that leverages state of the art AI, for an automated, continuous localization process, producing verifiably correct translations, quickly and at at low cost"> <meta property="og:image" content="https://lingu.dev/resources/integration/open-graph/image.jpg"> <meta property="og:image:width" content="1280"> <meta property="og:image:height" content="640"> <script async src="https://www.googletagmanager.com/gtag/js?id=G-QT1R03HKNZ"></script> <script> window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag("js", new Date());
+            gtag("config", "G-QT1R03HKNZ"); </script> <script defer="defer" src="/deps.288.js?de32a06b39c3ba11a4b6"></script><script defer="defer" src="/entry.app.js?0c5f08149b12959f7968"></script><link href="/deps.288.js?de32a06b39c3ba11a4b6" rel="preload" as="script"><link href="/entry.app.js?0c5f08149b12959f7968" rel="preload" as="script"></head> <body context="app" surface="base"> <div class="app-skeleton"> <script> // Determine the theme to apply.
+
+                const supportedThemes = JSON.parse('[{"slug":"lingu-dark","name":"Lingu","variant":"Dark","preview":{"base":"#1e1e1e","baseText":"#cccccc","baseBusyIndicator":"#ffffff","sidebar":"#333333","sidebarIcon":"#858585","card":"#252526","cardText":"#cccccc","overlay":"#131313","overlayBusyIndicator":"#ffffff","appIconFilter":"invert() brightness(0.65)"},"classes":["theme-is-dark-mode","theme-enable-animated-hero"]},{"slug":"lingu-light","name":"Lingu","variant":"Light","preview":{"base":"#ffffff","baseText":"#373b3e","baseBusyIndicator":"#000000","sidebar":"#ffffff","sidebarIcon":"#3c4044","card":"#fcfcfd","cardText":"#373b3e","overlay":"#fcfcfd","overlayBusyIndicator":"#000000","appIconFilter":"contrast(0.5)"},"classes":["theme-enable-animated-hero"]}]');
+
+                const preferredThemes =
+                [
+                    location.search.match(/(?:\?|&)theme=([^&#]+)/)?.[1],
+                    document.cookie.match(/(?:^|;) *theme=([^;]+)/)?.[1],
+                    "lingu-{variant}",
+                ]
+                .map(themeSlug => themeSlug?.replace("{variant}", preferredColorScheme))
+                .map(themeSlug => supportedThemes.find(theme => theme.slug === themeSlug));
+
+                const theme = preferredThemes.find(theme => theme != null);
+
+                // Apply the theme classes.
+
+                if (theme.classes?.length > 0)
+                {
+                    document.documentElement.classList.add(...theme.classes);
+                }
+
+                // Configure the splash and skeleton to match the page that will be presented.
+
+                document.body.style.setProperty("--splash-background-color", theme.preview.overlay || "");
+                document.body.style.setProperty("--splash-busy-indicator-color", theme.preview.overlayBusyIndicator || "");
+
+                // Wait for the app to become fully composed, then remove the skeleton.
+
+                document.addEventListener("aurelia-composed", () =>
+                {
+                    // Fade out the skeleton.
+                    document.body.style.setProperty("--splash-background-color", "transparent");
+
+                    // Schedule the skeleton to be removed.
+                    setTimeout(() =>
+                    {
+                        document.body.querySelector(".app-skeleton").remove();
+                        document.body.style.removeProperty("--splash-background-color");
+                        document.body.style.removeProperty("--splash-busy-indicator-color");
+                    },
+                    500)
+                }); </script> <style>.app-skeleton{position:fixed;width:100%;height:100%;z-index:9999991;background-color:var(--splash-background-color,transparent);transition:background-color .5s}</style> </div> <main aurelia-app="index"> <div class="app-splash"> <div class="busy-indicator"> <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> <circle cx="50" cy="50" r="45"/> </svg> </div> <style>html{height:100%;width:100%;user-select:none;overflow:hidden}body{position:fixed;height:100%;width:100%;margin:0;background:var(--splash-background-color,#fff)}main{height:100%;width:100%}.app-splash{position:fixed;height:100%;width:100%;z-index:9999992;display:flex;align-items:center;justify-content:center;opacity:0;animation:fade-in ease-in forwards;animation-duration:.5s;--busy-indicator-max-width:25%;--busy-indicator-max-height:25%;--busy-indicator-stroke-width:5;--busy-indicator-color:var(--splash-busy-indicator-color, #000000);--busy-indicator-opacity:0.05}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}.app-splash .busy-indicator{margin-bottom:40px;width:var(--busy-indicator-max-width);height:var(--busy-indicator-max-height);color:var(--busy-indicator-color);opacity:var(--busy-indicator-opacity);line-height:0}.app-splash .busy-indicator svg{width:100%;height:100%;overflow:visible;animation:busy-indicator-svg-animation linear infinite;animation-duration:2s}@keyframes busy-indicator-svg-animation{0%{transform:rotateZ(0)}100%{transform:rotateZ(360deg)}}.app-splash .busy-indicator circle{animation:busy-indicator-circle-animation ease-in-out infinite both;animation-duration:1.4s;fill:transparent;stroke:currentColor;stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:280;stroke-width:var(--busy-indicator-stroke-width);transform-origin:50% 50%}@keyframes busy-indicator-circle-animation{0%,25%{stroke-dashoffset:280;transform:rotate(0)}50%,75%{stroke-dashoffset:75;transform:rotate(45deg)}100%{stroke-dashoffset:280;transform:rotate(360deg)}}</style> </div> </main> </body> </html> 
